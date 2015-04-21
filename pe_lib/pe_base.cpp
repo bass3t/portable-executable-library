@@ -1120,6 +1120,60 @@ bool pe_base::is_gui() const
 	return get_subsystem() == image_subsystem_windows_gui;
 }
 
+//Sets size of code
+void pe_base::set_size_of_code(uint32_t size)
+{
+	props_->set_size_of_code(size);
+}
+
+//Returns size of code 
+uint32_t pe_base::get_size_of_code() const
+{
+	return props_->get_size_of_code();
+}
+
+//Sets size of initialized data
+void pe_base::set_size_of_initialized_data(uint32_t size)
+{
+	props_->set_size_of_initialized_data(size);
+}
+
+//Returns size of initialized data
+uint32_t pe_base::get_size_of_initialized_data() const
+{
+	return props_->get_size_of_initialized_data();
+}
+
+//Sets size of uninitialized data
+void pe_base::set_size_of_uninitialized_data(uint32_t size)
+{
+	props_->set_size_of_uninitialized_data(size);
+}
+
+//Returns size of uninitialized data
+uint32_t pe_base::get_size_of_uninitialized_data() const
+{
+	return props_->get_size_of_uninitialized_data();
+}
+
+//Sets used linker version
+void pe_base::set_linker_version(uint8_t major, uint8_t minor)
+{
+	props_->set_linker_version(major, minor);
+}
+
+//Returns used linker version (minor byte)
+uint8_t pe_base::get_minor_linker_version() const
+{
+	return props_->get_minor_linker_version();
+}
+
+//Returns used linker version (major byte)
+uint8_t pe_base::get_major_linker_version() const
+{
+	return props_->get_major_linker_version();
+}
+
 //Sets required operation system version
 void pe_base::set_os_version(uint16_t major, uint16_t minor)
 {

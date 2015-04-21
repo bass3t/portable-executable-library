@@ -110,6 +110,26 @@ public: //DIRECTORIES
 	//Returns true if image has Windows GUI subsystem
 	bool is_gui() const;
 
+	//Sets size of code
+	void set_size_of_code(uint32_t size);
+	//Returns size of code 
+	uint32_t get_size_of_code() const;
+	//Sets size of initialized data
+	void set_size_of_initialized_data(uint32_t size);
+	//Returns size of initialized data
+	uint32_t get_size_of_initialized_data() const;
+	//Sets size of uninitialized data
+	void set_size_of_uninitialized_data(uint32_t size);
+	//Returns size of uninitialized data
+	uint32_t get_size_of_uninitialized_data() const;
+
+	//Sets used linker version
+	void set_linker_version(uint8_t major, uint8_t minor);
+	//Returns used linker version (minor byte)
+	uint8_t get_minor_linker_version() const;
+	//Returns used linker version (major byte)
+	uint8_t get_major_linker_version() const;
+
 	//Sets required operation system version
 	void set_os_version(uint16_t major, uint16_t minor);
 	//Returns required operation system version (minor word)

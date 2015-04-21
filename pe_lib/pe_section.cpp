@@ -69,6 +69,21 @@ section& section::discardable(bool discardable)
 	return set_flag(image_scn_mem_discardable, discardable);
 }
 
+//Sets "code" attribute of section
+section& section::code(bool code) {
+	return set_flag(image_scn_cnt_code, code);
+}
+
+//Sets "initialized data" attribute of section
+section& section::initialized_data(bool initialized_data) {
+	return set_flag(image_scn_cnt_initialized_data, initialized_data);
+}
+
+//Sets "uninitialized data" attribute of section
+section& section::uninitialized_data(bool uninitialized_data) {
+	return set_flag(image_scn_cnt_uninitialized_data, uninitialized_data);
+}
+
 //Returns true if section is readable
 bool section::readable() const
 {
@@ -87,14 +102,34 @@ bool section::executable() const
 	return (header_.Characteristics & image_scn_mem_execute) != 0;
 }
 
+//Returns "shared" attribute of section
 bool section::shared() const
 {
 	return (header_.Characteristics & image_scn_mem_shared) != 0;
 }
 
+//Returns "discardable" attribute of section
 bool section::discardable() const
 {
 	return (header_.Characteristics & image_scn_mem_discardable) != 0;
+}
+
+//Returns "code" attribute of section
+bool section::code() const 
+{
+	return (header_.Characteristics & image_scn_cnt_code) != 0;
+}
+
+//Returns "initialized data" attribute of section
+bool section::initialized_data() const 
+{
+	return (header_.Characteristics & image_scn_cnt_initialized_data) != 0;
+}
+
+//Returns "uninitialized data" attribute of section
+bool section::uninitialized_data() const 
+{
+	return (header_.Characteristics & image_scn_cnt_uninitialized_data) != 0;
 }
 
 //Returns true if section has no RAW data

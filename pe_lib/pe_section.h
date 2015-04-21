@@ -31,6 +31,9 @@ public:
 	section& executable(bool executable);
 	section& shared(bool shared);
 	section& discardable(bool discardable);
+	section& code(bool code);
+	section& initialized_data(bool initialized_data);
+	section& uninitialized_data(bool uninitialized_data);
 
 	//Returns attributes of section
 	bool readable() const;
@@ -38,6 +41,9 @@ public:
 	bool executable() const;
 	bool shared() const;
 	bool discardable() const;
+	bool code() const;
+	bool initialized_data() const;
+	bool uninitialized_data() const;
 
 	//Returns true if section has no RAW data
 	bool empty() const;

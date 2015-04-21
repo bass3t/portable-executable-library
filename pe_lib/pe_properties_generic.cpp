@@ -439,6 +439,70 @@ uint32_t pe_properties_generic<PEClassType>::get_magic() const
 	return nt_headers_.OptionalHeader.Magic;
 }
 
+//Sets size of code
+template<typename PEClassType>
+void pe_properties_generic<PEClassType>::set_size_of_code(uint32_t size) 
+{
+	nt_headers_.OptionalHeader.SizeOfCode = size;
+}
+
+//Returns size of code
+template<typename PEClassType>
+uint32_t pe_properties_generic<PEClassType>::get_size_of_code() const
+{
+	return nt_headers_.OptionalHeader.SizeOfCode;
+}
+
+//Sets size of initialized data
+template<typename PEClassType>
+void pe_properties_generic<PEClassType>::set_size_of_initialized_data(uint32_t size)
+{
+	nt_headers_.OptionalHeader.SizeOfInitializedData = size;
+}
+
+//Returns size of initialized data
+template<typename PEClassType>
+uint32_t pe_properties_generic<PEClassType>::get_size_of_initialized_data() const
+{
+	return nt_headers_.OptionalHeader.SizeOfInitializedData;
+}
+
+//Sets size of uninitialized data
+template<typename PEClassType>
+void pe_properties_generic<PEClassType>::set_size_of_uninitialized_data(uint32_t size)
+{
+	nt_headers_.OptionalHeader.SizeOfUninitializedData = size;
+}
+
+//Returns size of uninitialized data
+template<typename PEClassType>
+uint32_t pe_properties_generic<PEClassType>::get_size_of_uninitialized_data() const
+{
+	return nt_headers_.OptionalHeader.SizeOfUninitializedData;
+}
+
+//Sets used linker version
+template<typename PEClassType>
+void pe_properties_generic<PEClassType>::set_linker_version(uint8_t major, uint8_t minor) 
+{
+	nt_headers_.OptionalHeader.MinorLinkerVersion = minor;
+	nt_headers_.OptionalHeader.MajorLinkerVersion = major;
+}
+
+//Returns used linker version (minor byte)
+template<typename PEClassType>
+uint8_t pe_properties_generic<PEClassType>::get_minor_linker_version() const
+{
+	return nt_headers_.OptionalHeader.MinorLinkerVersion;
+}
+
+//Returns used linker version (major byte)
+template<typename PEClassType>
+uint8_t pe_properties_generic<PEClassType>::get_major_linker_version() const
+{
+	return nt_headers_.OptionalHeader.MajorLinkerVersion;
+}
+
 //Sets required operation system version
 template<typename PEClassType>
 void pe_properties_generic<PEClassType>::set_os_version(uint16_t major, uint16_t minor)

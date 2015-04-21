@@ -151,6 +151,33 @@ public: //PE HEADER
 	//Sets DLL Characteristics
 	virtual void set_dll_characteristics(uint16_t characteristics) = 0;
 	
+	//Sets size of code
+	virtual void set_size_of_code(uint32_t size) = 0;
+
+	//Returns size of code 
+	virtual uint32_t get_size_of_code() const = 0;
+
+	//Sets size of initialized data
+	virtual void set_size_of_initialized_data(uint32_t size) = 0;
+
+	//Returns size of initialized data
+	virtual uint32_t get_size_of_initialized_data() const = 0;
+
+	//Sets size of uninitialized data
+	virtual void set_size_of_uninitialized_data(uint32_t size) = 0;
+
+	//Returns size of uninitialized data
+	virtual uint32_t get_size_of_uninitialized_data() const = 0;
+
+	//Sets used linker version
+	virtual void set_linker_version(uint8_t major, uint8_t minor) = 0;
+
+	//Returns used linker version (minor byte)
+	virtual uint8_t get_minor_linker_version() const = 0;
+
+	//Returns used linker version (major byte)
+	virtual uint8_t get_major_linker_version() const = 0;
+
 	//Sets required operation system version
 	virtual void set_os_version(uint16_t major, uint16_t minor) = 0;
 
